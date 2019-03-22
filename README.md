@@ -58,7 +58,7 @@ Step 3: Use BeautifulSoup to pull basic data from a website, in our case LCBO.co
         detailChildren = details.findChildren("dd", recursive=True)
 
         csv.set_value(index, 'BottleSize', detailChildren[0].text.replace(u'\xa0', '').replace(u'\n','').replace(u'\t',''))
-        csv.set_value(index, 'Proof', detailChildren[1].text.replace(u'\xa0', '').replace(u'\n','').replace(u'\t','').replace('%','')))
+        csv.set_value(index, 'Proof', detailChildren[1].text.replace(u'\xa0', '').replace(u'\n','').replace(u'\t','').replace('%',''))
         csv.set_value(index, 'MadeIn',detailChildren[2].text.replace(u'\xa0', '').replace(u'\n','').replace(u'\t',''))
         csv.set_value(index, 'Cost',soup.find("span", {"class": "price"}).text.replace(u'\xa0', '').replace(u'\n','').replace(u'\t','').replace('$','').replace(',','.'))
 	
