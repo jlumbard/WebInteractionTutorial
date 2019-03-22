@@ -1,5 +1,7 @@
 # WebInteractionTutorial
 
+https://github.com/BurntSushi/nfldb/wiki/Python-&-pip-Windows-installation
+
 Step 1: Requirements + Purpose
 	
 	Python 3.6-3.7
