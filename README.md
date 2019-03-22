@@ -67,6 +67,12 @@ Step 3: Use BeautifulSoup to pull basic data from a website, in our case LCBO.co
 
       if(index == 70):
         break
+	
+	
+  Then maybe try this:
+  
+    	for item, row in csv.iterrows():
+  	print(row)
 
 Step 4: Use Selenium, a web-driving tool, to put in your info on SupremeNewYork.com
 
