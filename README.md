@@ -1,6 +1,12 @@
 # WebInteractionTutorial
 
-Step 1: Requirements
+Step 1: Requirements + Purpose
+	
+	Python 3.6-3.7
+	Selenium
+	ChromeDriver
+	
+  Whats the legality of this stuff?
 
 Step 2: Use requests to Post to a simple form
 
@@ -31,9 +37,9 @@ Step 3: Use BeautifulSoup to pull basic data from a website, in our case LCBO.co
     csv = pandas.read_csv('https://raw.githubusercontent.com/jlumbard/WebInteractionTutorial/master/LCBOProductList.csv')
 
     csv['BottleSize'] = ""
-    csv['Proof'] = 0.0
+    csv['Proof'] = ""
     csv['MadeIn'] = ""
-    csv['Cost'] = 0.0
+    csv['Cost'] = ""
 
     headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'}
 
@@ -50,21 +56,20 @@ Step 3: Use BeautifulSoup to pull basic data from a website, in our case LCBO.co
         details = soup.find("div", {"class": "product-details-list"})
         detailChildren = details.findChildren("dd", recursive=True)
 
-
         csv.set_value(index, 'BottleSize', detailChildren[0].text.replace(u'\xa0', '').replace(u'\n','').replace(u'\t',''))
-        csv.set_value(index, 'Proof', float(detailChildren[1].text.replace(u'\xa0', '').replace(u'\n','').replace(u'\t','').replace('%',''))/100)
+        csv.set_value(index, 'Proof', detailChildren[1].text.replace(u'\xa0', '').replace(u'\n','').replace(u'\t','').replace('%','')))
         csv.set_value(index, 'MadeIn',detailChildren[2].text.replace(u'\xa0', '').replace(u'\n','').replace(u'\t',''))
-
         csv.set_value(index, 'Cost',soup.find("span", {"class": "price"}).text.replace(u'\xa0', '').replace(u'\n','').replace(u'\t','').replace('$','').replace(',','.'))
+	
       except Exception as e:
         pass
 
       if(index == 70):
         break
 
-    
-
 Step 4: Use Selenium, a web-driving tool, to put in your info on SupremeNewYork.com
+
+    Why do you use selenium instead?
     
     from selenium import webdriver
     path = 'C:\\Users\\Brock\\Desktop\\March2019Founders\\chromedriver.exe'
@@ -107,3 +112,7 @@ Step 4: Use Selenium, a web-driving tool, to put in your info on SupremeNewYork.
     browser.find_element_by_xpath('//*[@id="order_terms"]').click() #TermsAndConditions
    
     browser.find_element_by_xpath('//*[@id="pay"]/input').click()
+    
+  Done. Did it fail for you?
+  
+  Discussion. What do Websites do to make this harder for you?
