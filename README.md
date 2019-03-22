@@ -30,6 +30,7 @@ Step 2: Use requests to Post to a simple form
 
 
 Step 3: Use BeautifulSoup to pull basic data from a website, in our case LCBO.com.
+
     import requests
     import pandas
     from bs4 import BeautifulSoup as bs
