@@ -82,47 +82,50 @@ Step 4: Use Selenium, a web-driving tool, to put in your info on SupremeNewYork.
 
     Why do you use selenium instead?
     
-    from selenium import webdriver
-    path = 'C:\\Users\\Brock\\Desktop\\March2019Founders\\chromedriver.exe'
-    browser = webdriver.Chrome(path)
-    browser.get('https://www.supremenewyork.com/shop/t-shirts/uubxrkwyn/i6yxfj3sp')
-    
-    for x in browser.find_elements_by_class_name('button'):
-		print(x.text)def 
-    
-    browser.find_elements_by_class_name('button')[2].click()
-    
-    browser.find_elements_by_class_name('button')[1].click()
-    
-    browser.find_element_by_xpath('//*[@id="order_billing_name"]').send_keys("Brock Lumbard")
-    
-    browser.find_element_by_xpath('//*[@id="order_email"]').send_keys("blumbard.hba2020@ivey.ca")
-    
-    browser.find_element_by_xpath('//*[@id="order_tel"]').send_keys("306-540-3084")
-    
-    browser.find_element_by_xpath('//*[@id="bo"]').send_keys("217 Western Road")
-   
-    browser.find_element_by_xpath('//*[@id="oba3"]').send_keys("3586")
-    
-    browser.find_element_by_xpath('//*[@id="order_billing_zip"]').send_keys("N4V1E9")#postalCode
-    
-    browser.find_element_by_xpath('//*[@id="order_billing_city"]').send_keys("London")#City
-    
-    browser.find_element_by_xpath('//*[@id="order_billing_country"]').send_keys("Canada")#Country
-    
-    browser.find_element_by_xpath('//*[@id="order_billing_state"]').send_keys("ON")#Province
-    
-    browser.find_element_by_xpath('//*[@id="nnaerb"]').send_keys("1111111111111111")#CCnumber
-    
-    browser.find_element_by_xpath('//*[@id="credit_card_month"]').send_keys("09")#ExpiryMonth
-    
-    browser.find_element_by_xpath('//*[@id="credit_card_year"]').send_keys("2020")#ExpiryYear
-    
-    browser.find_element_by_xpath('//*[@id="orcer"]').send_keys("111")#CVV
-    
-    browser.find_element_by_xpath('//*[@id="order_terms"]').click() #TermsAndConditions
-   
-    browser.find_element_by_xpath('//*[@id="pay"]/input').click()
+    	browser = webdriver.Chrome(path)
+	browser.get('https://www.supremenewyork.com/shop/t-shirts/uubxrkwyn/i6yxfj3sp')
+	import time
+
+	time.sleep(5)
+
+	for x in browser.find_elements_by_class_name('button'):
+		print(x.text)
+
+	browser.find_elements_by_class_name('button')[2].click()
+
+
+	time.sleep(5)
+	browser.find_elements_by_class_name('button')[1].click()
+
+	browser.find_element_by_xpath('//*[@id="order_billing_name"]').send_keys("Brock Lumbard")
+
+	browser.find_element_by_xpath('//*[@id="order_email"]').send_keys("blumbard.hba2020@ivey.ca")
+
+	browser.find_element_by_xpath('//*[@id="order_tel"]').send_keys("306-540-3084")
+
+	browser.find_element_by_xpath('//*[@id="bo"]').send_keys("217 Western Road")
+
+	browser.find_element_by_xpath('//*[@id="oba3"]').send_keys("3586")
+
+	browser.find_element_by_xpath('//*[@id="order_billing_zip"]').send_keys("N4V1E9")#postalCode
+
+	browser.find_element_by_xpath('//*[@id="order_billing_city"]').send_keys("London")#City
+
+	browser.find_element_by_xpath('//*[@id="order_billing_country"]').send_keys("Canada")#Country
+
+	browser.find_element_by_xpath('//*[@id="order_billing_state"]').send_keys("ON")#Province
+
+	browser.find_element_by_xpath('//*[@id="nnaerb"]').send_keys("1111111111111111")#CCnumber
+
+	browser.find_element_by_xpath('//*[@id="credit_card_month"]').send_keys("09")#ExpiryMonth
+
+	browser.find_element_by_xpath('//*[@id="credit_card_year"]').send_keys("2020")#ExpiryYear
+
+	browser.find_element_by_xpath('//*[@id="orcer"]').send_keys("111")#CVV
+
+	browser.find_element_by_xpath('//*[@id="order_terms"]').click() #TermsAndConditions
+
+	browser.find_element_by_xpath('//*[@id="pay"]/input').click()
     
   Done. Did it fail for you?
   
